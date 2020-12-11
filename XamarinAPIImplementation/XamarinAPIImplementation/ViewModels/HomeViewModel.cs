@@ -13,6 +13,7 @@ namespace XamarinAPIImplementation.ViewModels
     class HomeViewModel : INotifyPropertyChanged
     {
         public ICommand GetRandomPlatformCommand => new Command(GetRandomPlatform);
+        public ICommand TapCommand => new Command<string>(async (url) => await Launcher.OpenAsync(url));
 
         public event PropertyChangedEventHandler PropertyChanged;
         public Result Platform 
